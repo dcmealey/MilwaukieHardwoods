@@ -24,9 +24,12 @@
                             <label for="inputLogDiameter">Log Diameter</label>
                             <input type="text" class="form-control" name='LogDiameter' id="inputLogDiameter" placeholder="Log Diameter" v-model='vsalvageLogData.LogDiameter'>
                         </div>
-                        <div class='form-group col-md-6'>
+                        <div class='form-group col-md-12'>
                             <label for='inputTrunkHeight'>Trunk Height</label>
-                            <input type='integer' class='form-control' name='TrunkHeight' id='inputTrunkHeight' placeholder="8'-16'" v-model='vsalvageLogData.TrunkHeight'>
+                            <!-- <input type='integer' class='form-control' name='TrunkHeight' id='inputTrunkHeight' placeholder="8'-16'" v-model='vsalvageLogData.TrunkHeight'> -->
+                            <div class='slidecontainer'>
+                                <input id="tree_height" type="range" min="2" max="20" step="1" value="8" class='slider'/>
+                            </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputAddress">Address</label>
@@ -62,13 +65,13 @@
                 <div class="card" v-if="isSubmitted">
                     <div class="card-body">
                         <h4 class="card-title">Salvage Log Info</h4>
-                        <p>Species: <b>${ vsalvageLogData.Species }</b></p>
-                        <p>Tree Trunk/Log Diameter: <b>${ vsalvageLogData.LogDiameter }</b></p>
-                        <p>Trunk-to-Crotch Height: <b>${ vsalvageLogData.TrunkHeight }</b></p>
-                        <p>Address: <b>${ vsalvageLogData.Address }</b></p>
-                        <p>Address2: <b>${ vsalvageLogData.Address2 }</b></p>
-                        <p>City: <b>${ vsalvageLogData.City }</b></p>
-                        <p>Zip: <b>${ vsalvageLogData.Zip }</b></p>
+                        <p>Species: <b>{$ vsalvageLogData.Species $}</b></p>
+                        <p>Tree Trunk/Log Diameter: <b>{$ vsalvageLogData.LogDiameter $}</b></p>
+                        <p>Trunk-to-Crotch Height: <b>{$ vsalvageLogData.TrunkHeight $}</b></p>
+                        <p>Address: <b>{$ vsalvageLogData.Address $}</b></p>
+                        <p>Address2: <b>{$ vsalvageLogData.Address2 $}</b></p>
+                        <p>City: <b>{$ vsalvageLogData.City $}</b></p>
+                        <p>Zip: <b>{$ vsalvageLogData.Zip $}</b></p>
 
                     </div>
                 </div>
